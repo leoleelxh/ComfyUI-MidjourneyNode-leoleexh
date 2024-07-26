@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class MidjourneyAPIClient:
     def __init__(self):
-        self.base_url = "http://192.168.1.32:7080"
+        self.base_url = "http://192.168.1.200:7080"
 
     def start_generation(self, params):
         if isinstance(params, str):
