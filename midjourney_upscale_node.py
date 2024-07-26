@@ -13,7 +13,7 @@ class MidjourneyUpscaleNode:
             "required": {
                 "image": ("IMAGE",),
                 "task_id": ("STRING", {"multiline": False}),
-                "action": (["U1", "U2", "U3", "U4", "V1", "V2", "V3", "V4"], {"default": "U1"}),
+                "action": (["U1", "U2", "U3", "U4"], {"default": "U1"}),
             }
         }
 
