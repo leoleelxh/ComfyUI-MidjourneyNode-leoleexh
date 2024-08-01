@@ -1,3 +1,8 @@
+
+# Update
+2024-08-01: Add a new feature: Add v 6.1 model selection; change configuration url method; add q2 parameter.
+
+
 # ComfyUI-MidjourneyNode-leoleexh
 This node allows ComfyUI to easily integrate with Midjourney, utilizing the ultra-high quality of Midjourney and the powerful control of SD to provide more convenient capabilities for AIGC.
 
@@ -16,7 +21,7 @@ If necessary, check the pip requirements. It will be necessary.
 
 ## Settings
 
-In the `api_client.py` file, just set the API address.
+In the `setting.yaml` file, just set the API address.
 
 ![comfyuillms.png](example/setting.jpg)
 

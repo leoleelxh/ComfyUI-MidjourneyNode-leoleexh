@@ -5,6 +5,8 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 import logging
+import yaml
+import os
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -12,7 +14,19 @@ logger = logging.getLogger(__name__)
 
 class MidjourneyAPIClient:
     def __init__(self):
-        self.base_url = "http://192.168.1.200:7080"
+        self.base_url = self.load_api_url()
+
+    def load_api_url(self):
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        config_path = os.path.join(script_dir, 'setting.yaml')
+
+        try:
+            with open(config_path, 'r') as config_file:
+                config = yaml.safe_load(config_file)
+                return config['API_URL']['api_url']
+        except Exception as e:
+            logger.error(f"Error loading configuration: {str(e)}")
+            raise
 
     def start_generation(self, params):
         if isinstance(params, str):

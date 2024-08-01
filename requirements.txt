@@ -3,3 +3,4 @@ requests
 Pillow
 numpy
 torch
+yaml
